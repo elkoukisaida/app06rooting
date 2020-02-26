@@ -1,0 +1,70 @@
+<form [formGroup]="profile">
+
+    <p>
+        <mat-form-field appearance="outline" class="hh ">
+            <input matInput placeholder="first name" formControlName="firstName" required>
+
+            <!-- <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon> -->
+            <mat-error *ngIf="profile.hasError('required', 'firstName')">You must enter a value </mat-error>
+
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline" class="hh">
+            <input matInput placeholder="last name" formControlName="lastName" required>
+            <!-- <mat-icon color="accent" matSuffix>sentiment_very_satisfied</mat-icon> -->
+            <mat-error *ngIf="profile.hasError('required', 'lastName')">You must enter a value </mat-error>
+
+        </mat-form-field>
+
+    </p>
+    <p>
+        <mat-form-field appearance="outline" class="hh">
+            <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email" required>
+            <!-- <mat-icon color="accent" matSuffix>email</mat-icon> -->
+            <mat-error *ngIf="profile.hasError('required', 'email')">You must enter a value</mat-error>
+
+        </mat-form-field>
+
+    </p>
+    <p>
+        <!-- <mat-form-field appearance="outline" class="hh">
+          <input type="date" matInput placeholder="Date" formControlName="birth" required>
+          <mat-icon color="accent" matSuffix>calendar_today</mat-icon>
+          <mat-error *ngIf="profile.hasError('required', 'birth')">You must enter a value</mat-error>
+
+      </mat-form-field> -->
+
+    </p>
+    <p>
+        <mat-form-field appearance="outline" class="hh">
+            <input type="text" matInput placeholder="phone" formControlName="phone" required>
+            <!-- <mat-icon color="accent" matSuffix>phone</mat-icon> -->
+            <mat-error *ngIf="profile.hasError('required', 'phone')">Phone number is required</mat-error>
+
+        </mat-form-field>
+
+    </p>
+
+    <div class="example-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+
+
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <!-- <mat-error *ngIf="profile.hasError('required','password')">Password is required> </mat-error> -->
+
+      </button>
+        </mat-form-field>
+    </div>
+
+
+
+    <div class="example-button-row">
+
+        <button (click)="add()" class="center" mat-raised-button [disabled]='!profile.valid' color="accent">register</button>
+    </div>
+</form>

@@ -1,0 +1,50 @@
+<form [formGroup]='profilup'>
+
+    <p>
+        <mat-form-field appearance="outline" class="hh ">
+            <input matInput placeholder="first name" formControlName="firstName">
+
+            <!-- <mat-icon matSuffix color="accent">sentiment_very_satisfied</mat-icon> -->
+
+        </mat-form-field>
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline" class="hh">
+            <input matInput placeholder="last name" formControlName="lastName">
+            <!-- <mat-icon color="accent" matSuffix>sentiment_very_satisfied</mat-icon> -->
+
+        </mat-form-field>
+
+    </p>
+    <p>
+        <mat-form-field appearance="outline" class="hh">
+            <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+            <!-- <mat-icon color="accent" matSuffix>email</mat-icon> -->
+
+        </mat-form-field>
+
+
+    </p>
+    <p>
+        <!-- <mat-form-field appearance="outline" class="hh">
+            <input type="date" matInput placeholder="Date" formControlName="birth" required>
+            <mat-icon color="accent" matSuffix>calendar_today</mat-icon>
+
+        </mat-form-field> -->
+
+    </p>
+    <p>
+        <mat-form-field appearance="outline" class="hh">
+            <input type="text" matInput placeholder="phone" formControlName="phone">
+            <!-- <mat-icon color="accent" matSuffix>phone</mat-icon> -->
+
+        </mat-form-field>
+
+    </p>
+
+    <div class="example-button-row">
+
+        <button (click)="up()" class="center" mat-raised-button color="red">update</button>
+    </div>
+</form>
